@@ -1,7 +1,7 @@
 /* 導覽列 */
 .navbar{
-    overflow: hidden;
-    background-color: cadetblue;
+    overflow: hidden; /*為了讓他在網頁最上面*/
+    background-color: rgb(255, 110, 38);
     font-family: Arial;
 }
 
@@ -11,23 +11,24 @@
     font-size: 32px;
     color: white;
     text-align: center;
-    padding: 16px 32px;
-    text-decoration: none;
+    padding: 16px 32px;  /*從中間往上下16px 左右32px*/
+    text-decoration: none;  /*阿災*/
 }
 
-/**/
+/*下拉式選單*/
 .dropdown{
     float: left;
     overflow: hidden;
 }
 
+/*下拉式選單跟link的按鈕*/
 .dropdown .dropbtn{
     font-size: 32px;
     border: none;
     outline: none;
     color: white;
     padding: 16px 32px;
-    background-color: inherit;
+    background-color: inherit; /*沿用父元素*/
     font-family: inherit;
     margin: 0;
 }
@@ -36,6 +37,7 @@
     background-color: red;
 }
 
+/*下拉式選單的內容*/
 .dropdown-content{
     display: none;
     position: absolute;
@@ -58,6 +60,7 @@
     background-color: #ddd;
 }
 
+/*下拉式選單的框框*/
 .dropdown:hover .dropdown-content{
     display: block;
 }
