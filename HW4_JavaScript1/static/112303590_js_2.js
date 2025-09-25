@@ -32,6 +32,13 @@ function evaluateScreen(){
 // 建立一個陣列 [0,1,2,3,4,5,6,7,8,9]
 let nums = [0,1,2,3,4,5,6,7,8,9];
 
+for (let j = nums.length - 1; j > 0; j--) {
+  // 隨機選一個位置 k (0 ≤ k ≤ j)
+  let k = Math.floor(Math.random() * (j + 1));
+  // 交換 nums[j] 和 nums[k]
+  [nums[j], nums[k]] = [nums[k], nums[j]];
+}
+
 // 用 for 迴圈把 0–9 的按鈕依序寫出來
 for (let i=0; i<nums.length; i++){
     if (i % 5 === 0) document.write("<br>");    // 每 3 個數字換行（i=0,3,6 時會先寫一個 <br>）
@@ -54,10 +61,15 @@ document.write(`
 // 建立一個運算子陣列，加、減、乘、除、左括號、右括號
 let ops = ["+","-","*","/","(",")"];
 
+for (let j = ops.length - 1; j > 0; j--) {
+  // 隨機選一個位置 k (0 ≤ k ≤ j)
+  let k = Math.floor(Math.random() * (j + 1));
+  // 交換 nums[j] 和 nums[k]
+  [ops[j], ops[k]] = [ops[k], ops[j]];
+}
+
 // 用 for 迴圈把運算子按鈕依序寫出來
 for (let i=0; i<ops.length; i++){
-  // 每個按鈕的 onclick：呼叫 appendToScreen("符號")
-  // 注意：字串要加跳脫字元 \" 才能正確顯示
   document.write(
     "<button onclick='appendToScreen(\"" + ops[i] + "\")' style='width:60px;height:40px;margin:2px;'>"
     + ops[i] + "</button>"
