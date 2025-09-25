@@ -22,7 +22,7 @@ function evaluateScreen(){
     let expr = document.getElementById("screen").value; // 讀取輸入框的字串
     try{
         let ans = eval(expr);   // 用 eval() 計算算式
-        alert(expr + " = " + ans);  // 顯示算式與答案
+        alert("是不會用自己的計算機喔" + expr + " = " + ans);  // 顯示算式與答案
         document.getElementById("screen").value = ans;  // 把輸入框換成答案
     }catch(e){
         alert("算式錯誤!"); // 如果算式格式錯誤，顯示提示訊息
