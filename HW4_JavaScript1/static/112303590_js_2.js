@@ -41,11 +41,11 @@ for (let j = nums.length - 1; j > 0; j--) {
 
 // 用 for 迴圈把 0–9 的按鈕依序寫出來
 for (let i=0; i<nums.length; i++){
-    if (i % 5 === 0) document.write("<br>");    // 每 3 個數字換行（i=0,3,6 時會先寫一個 <br>）
+    if (i % 10 === 0) document.write("<br>");    // 每 3 個數字換行（i=0,3,6 時會先寫一個 <br>）
     
     //建立數字按鈕
     document.write(
-    "<button onclick='appendToScreen(" + nums[i] + ")' style='width:60px;height:40px;margin:2px;'>" 
+    "<button onclick='appendToScreen(" + nums[i] + ")' style='width:30px;height:40px;margin:2px;'>" 
     + nums[i] + "</button>"
   );
 }
