@@ -13,5 +13,7 @@ function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜�
         alert("恭喜答對！你總共猜了 " + attempts + " 次。");    // 跳出提示，顯示總共猜了幾次
         answer = Math.floor(Math.random() * 101);   // 遊戲重置，重新產生新答案
         attempts = 0;   // 把次數歸零，準備下一輪
+    } else if (guess > answer){ // 如果猜的數字比答案大
+        alert("太大了，再試一次!")
     }
 }
