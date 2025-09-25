@@ -15,5 +15,7 @@ function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜�
         attempts = 0;   // 把次數歸零，準備下一輪
     } else if (guess > answer){ // 如果猜的數字比答案大
         alert("太大了，再試一次!")
+    } else {    // 如果猜的數字比答案小
+        alert("太小了，再試一次!")
     }
 }
