@@ -47,13 +47,9 @@ function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜�
     startTimerIfFirstGuess();   // 若是本輪第一次猜，啟動計時器（開始計時）
 
     if (guess === answer) { // 如果猜的數字等於答案
-        alert("恭喜答對！你總共猜了 " + attempts + " 次。");    // 跳出提示，顯示總共猜了幾次
-        answer = Math.floor(Math.random() * 101);   // 遊戲重置，重新產生新答案
-        attempts = 0;   // 把次數歸零，準備下一輪
-    } else if (guess > answer){ // 如果猜的數字比答案大
-        alert("太大了，再試一次!")
-    } else {    // 如果猜的數字比答案小
-        alert("太小了，再試一次!")
+        const usedMs  = startTime ? (Date.now() - startTime) : 0;   // 計算耗時（毫秒）：現在時間-開始時間；若還沒開始則0
+        const usedStr = formatSec(usedMs);  // 轉成「秒」的字串（小數兩位），例如 "7.32"
+        alert(`恭喜答對！你好棒!共猜了 ${attempts} 次，耗時 ${usedStr} 秒`);   // 跳出 alert 告知「猜測次數＋耗時」
     }
 }
 
