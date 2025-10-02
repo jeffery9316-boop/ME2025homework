@@ -5,6 +5,10 @@ table {
 }
 
 th {
-  background-color: rgb(219, 217, 217);   /* 標題列背景色 */
+  background-color: rgb(188, 186, 186);   /* 標題列背景色 */
   font-weight: bold;           /* 標題文字加粗 */
+}
+
+tr:hover {
+  background-color: #d4e6fb;   /* 滑鼠移上去時變色 */
 }
