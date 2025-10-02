@@ -5,6 +5,11 @@ let startTime = null;  // 開始時間
 let timerId = null;    // setInterval 的 id
 let timerRunning = false;   //計時器是否在跑
 
+const inputEl = document.getElementById("input_1");   //輸入框
+const hintEl = document.getElementById("hint");   //提示文字區域
+const timerEl = document.getElementById("timer");   //計時顯示區域
+const recordsEl = document.getElementById("records");   //答題記錄清單
+
 function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜」按鈕時執行
     event.preventDefault();     // 阻止 <form> 的預設行為（避免頁面重新整理）
     
