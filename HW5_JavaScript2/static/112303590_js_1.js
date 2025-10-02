@@ -63,7 +63,12 @@ function checkGuess(event) {
         li.textContent = `猜了 ${attempts} 次，耗時 ${usedStr} 秒，時間：${new Date().toLocaleTimeString()}`; // 寫入「次數、耗時、當下時間(toLocaleTimeString)」
         recordsEl.appendChild(li);  // 把 <li> 加到紀錄清單（appendChild）
 
-
+        answer = Math.floor(Math.random() * 101);   // 自動換新題（0~100 的隨機數）
+        attempts = 0;   // 本輪猜測次數歸零，準備下一輪
+        hintEl.textContent = "新的一題開始！";  // 畫面提示：已重新出題
+        inputEl.value = ""; // 清空輸入框
+        inputEl.focus();    // 聚焦到輸入框，方便使用者繼續作答
+        return;
     }
 }
 
