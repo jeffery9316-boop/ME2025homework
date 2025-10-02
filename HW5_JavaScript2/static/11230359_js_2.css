@@ -3,3 +3,8 @@ table {
   font-family: "Microsoft JhengHei", sans-serif;
   text-align: center;          /* 內容文字置中 */
 }
+
+th {
+  background-color: rgb(219, 217, 217);   /* 標題列背景色 */
+  font-weight: bold;           /* 標題文字加粗 */
+}
