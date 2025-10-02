@@ -37,14 +37,11 @@ function stopAndResetTimer() {  // 定義函式：停止目前的計時，並把
   timerEl.textContent = "0.00"; // 將畫面上的時間顯示重設為 0.00 秒
 }
 
-
-
-
 function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜」按鈕時執行
     event.preventDefault();     // 阻止 <form> 的預設行為（避免頁面重新整理）
     
-    let guess = document.getElementById("input_1").value;   // 取得輸入框 (id="input_1") 輸入的值
-    guess = Number(guess);  // 把輸入的內容轉換成數字 (避免字串比較錯誤)
+    const guess = Number(inputEl.value);    // 從輸入框取得字串並轉成數字
+    if (Number.isNaN(guess)) return;    // 防呆：如果不是數字就直接結束（HTML 已有 required，這是雙重保險）
 
     attempts++; // 每按一次「猜」，次數就加 1
 
