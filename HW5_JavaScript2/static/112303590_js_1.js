@@ -10,8 +10,14 @@ const hintEl = document.getElementById("hint");   //提示文字區域
 const timerEl = document.getElementById("timer");   //計時顯示區域
 const recordsEl = document.getElementById("records");   //答題記錄清單
 
-function formatSec(ms) {   // 把毫秒轉成秒（小數點兩位）
+function formatSec(ms) {    // 把毫秒轉成秒（小數點兩位）
   return (ms / 1000).toFixed(2);
+}
+
+function updateTimer() {    // 定義一個函式，用來把「經過時間」更新到畫面上
+  if (!timerRunning || startTime === null) return;  // 若計時器沒在跑( !timerRunning )，或尚未設定開始時間(startTime === null)，就直接結束函式
+  const ms = Date.now() - startTime;    // 以毫秒計算經過的時間：現在時間(毫秒)-開始時間(毫秒)
+  timerEl.textContent = formatSec(ms);  // 把毫秒轉為「秒數(含小數兩位)」的文字，寫回到畫面上的 #timer 元素
 }
 
 function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜」按鈕時執行
