@@ -70,5 +70,9 @@ function checkGuess(event) {
         inputEl.focus();    // 聚焦到輸入框，方便使用者繼續作答
         return;
     }
+    hintEl.textContent = (guess > answer) ? "太大了，請再試一次。" : "太小了，請再試一次。";    // 需求②：沒猜中時把提示顯示在畫面（不再用 alert）
+    inputEl.select();   // 選取輸入框內容，方便直接覆寫
+    inputEl.focus();    // 確保游標還在輸入框裡，提升連續作答的體驗
+
 }
 
