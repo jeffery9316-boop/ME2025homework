@@ -1,6 +1,10 @@
 let answer = Math.floor(Math.random() * 101);   //隨機產生0~100的數字
 let attempts = 0;   //猜的次數
 
+let startTime = null;  // 開始時間
+let timerId = null;    // setInterval 的 id
+let timerRunning = false;   //計時器是否在跑
+
 function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜」按鈕時執行
     event.preventDefault();     // 阻止 <form> 的預設行為（避免頁面重新整理）
     
