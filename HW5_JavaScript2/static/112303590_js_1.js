@@ -29,6 +29,15 @@ function startTimerIfFirstGuess() { // 定義一個函式，只有在「第一�
   }
 }
 
+function stopAndResetTimer() {  // 定義函式：停止目前的計時，並把畫面時間歸零
+  if (timerId) clearInterval(timerId);  // 如果有開著的 setInterval，用它的 id 把計時器關掉
+  timerId = null;   // 將 interval 的識別碼清空，表示現在沒有計時器在跑
+  timerRunning = false; // 狀態改為「未運行」，避免之後誤判正在計時
+  startTime = null; // 清除開始時間；下次重新開始會再以 Date.now() 設定
+  timerEl.textContent = "0.00"; // 將畫面上的時間顯示重設為 0.00 秒
+}
+
+
 
 
 function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜」按鈕時執行
@@ -49,3 +58,4 @@ function checkGuess(event) {    // 定義函式 checkGuess()，在按下「猜�
         alert("太小了，再試一次!")
     }
 }
+
