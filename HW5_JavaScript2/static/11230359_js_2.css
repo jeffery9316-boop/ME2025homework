@@ -1,0 +1,5 @@
+table {
+  border-collapse: collapse;   /* 合併邊框，避免雙線 */
+  font-family: "Microsoft JhengHei", sans-serif;
+  text-align: center;          /* 內容文字置中 */
+}
