@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>註冊系統</title>
+
+        <!-- 請改變路徑：直接內嵌註冊提交邏輯 -->
+        <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.querySelector('form');
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const email    = document.getElementById('email').value.trim();
+
+            const r = await fetch('/page_register', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ username, password, email })
+            });
+            const data = await r.json();
+            alert(data.message || '註冊完成');
+            if (data.status === 'success') location.href = '/page_login';
+          });
+        });
+        </script>
+    </head>
+
+    <body>
+        <h2>註冊帳號</h2>
+        <!-- 請補齊內容：表單本體 -->
+        <form>
+            <label for="username">帳號:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">密碼:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <label for="Email">信箱:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <button type="submit">註冊</button>
+        </form>
+    </body>
+</html>

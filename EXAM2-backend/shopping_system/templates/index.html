@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>選物介面</title>
+  <link rel="stylesheet" href="../static/styles.css" />
+
+</head>
+<body>
+  <div class="quixnav">
+    👤 使用者：<strong id="current-user">{{ username }}</strong>
+    <a href="/logout" style="margin-left:8px;">登出</a>
+  </div>
+
+  <div id="filter">
+    <h3>條件篩選</h3>
+    <input id="max_price" placeholder="最大金額" />
+    <input id="min_price" placeholder="最小金額" />
+
+    <select id="gender">
+      <option value="All">All</option>
+      <option value="Male">男裝</option>
+      <option value="Female">女裝</option>
+    </select>
+
+    <div>
+      <input type="checkbox"id="shirts">
+      <label for="shirts">上衣</label>
+    </div>
+    <div>
+      <input type="checkbox"id="pants">
+      <label for="pants">褲/裙子</label>
+    </div>
+    <div>
+      <input type="checkbox"id="shoes">
+      <label for="shoes">鞋子</label>
+    </div>
+    <div>
+      <input type="checkbox"id="cap">
+      <label for="cap">帽子</label>
+    </div>
+    <button onclick="apply_filter(products)">篩選</button>
+  </div>
+  </div>
+
+  <div id="products">
+    <table>
+      <thead>
+        <tr>
+          <th>Selection</th>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Gender</th>
+          <th>Category</th>
+          <th>Number</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="../static/script.js" defer></script>
+</body>
+</html>
